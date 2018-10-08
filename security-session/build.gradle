@@ -8,8 +8,8 @@ buildscript {
 }
 
 ext {
-    gebVersion = '2.1'
-    seleniumVersion = '3.6.0'
+    gebVersion = '2.2'
+    seleniumVersion = '3.12.0'
 }
 
 apply plugin:"com.energizedwork.webdriver-binaries"
