@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.micronaut.security.token.jwt.signature.secret;
+package io.micronaut.security.token.jwt.signature.rsa;
 
 import io.micronaut.context.annotation.EachBean;
 import io.micronaut.context.annotation.Factory;
@@ -26,27 +26,16 @@ import io.micronaut.security.token.jwt.signature.SignatureGeneratorConfiguration
  * @since 1.0
  */
 @Factory
-public class SecretSignatureFactory {
+public class RSASignatureGeneratorFactory {
 
     /**
-     * Creates {@link SignatureConfiguration} for each {@link SecretSignatureConfiguration} bean.
+     * Creates {@link SignatureGeneratorConfiguration} for each {@link RSASignatureGeneratorConfiguration} bean.
      *
-     * @param configuration {@link SecretSignatureConfiguration} bean.
+     * @param configuration {@link RSASignatureGeneratorConfiguration} bean.
      * @return The {@link SignatureConfiguration}
      */
-    @EachBean(SecretSignatureConfiguration.class)
-    public SignatureConfiguration signatureConfiguration(SecretSignatureConfiguration configuration) {
-        return new SecretSignature(configuration);
-    }
-
-    /**
-     * Creates {@link SignatureGeneratorConfiguration} for each {@link SecretSignatureConfiguration} bean.
-     *
-     * @param configuration {@link SecretSignatureConfiguration} bean.
-     * @return The {@link SignatureGeneratorConfiguration}
-     */
-    @EachBean(SecretSignatureConfiguration.class)
-    public SignatureGeneratorConfiguration signatureGeneratorConfiguration(SecretSignatureConfiguration configuration) {
-        return new SecretSignature(configuration);
+    @EachBean(RSASignatureGeneratorConfiguration.class)
+    public SignatureGeneratorConfiguration signatureGeneratorConfiguration(RSASignatureGeneratorConfiguration configuration) {
+        return new RSASignatureGenerator(configuration);
     }
 }
