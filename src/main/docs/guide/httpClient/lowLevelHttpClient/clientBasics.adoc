@@ -21,7 +21,7 @@ The api:http.client.annotation.Client[] annotation is also a custom scope that w
 
 The value you pass to the api:http.client.annotation.Client[] annotation can be one of the following:
 
-* A absolute URI. Example `https://api.twitter.com/1.1`
+* An absolute URI. Example `https://api.twitter.com/1.1`
 * A relative URI, in which case the server targeted will be the current server (useful for testing)
 * A service identifier. See the section on <<serviceDiscovery, Service Discovery>> for more information on this topic.
 
